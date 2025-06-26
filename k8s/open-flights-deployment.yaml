@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: open-flights
-          image: open-flights-web:latest
+          image: ajinkya0771/open-flights-web:latest
           imagePullPolicy: Never
           command: ["/bin/bash","start.sh"]
           ports:
