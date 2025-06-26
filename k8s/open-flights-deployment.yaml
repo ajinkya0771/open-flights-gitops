@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open-flights
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: open-flights
+  template:
+    metadata:
+      labels:
+        app: open-flights
+    spec:
+      containers:
+        - name: open-flights
+          image: open-flights-web:latest
+          imagePullPolicy: Never
+          command: ["/bin/bash","start.sh"]
+          ports:
+            - containerPort: 3000
+          env:
+            - name: POSTGRES_HOST
+              value: postgres
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: mysecretpassword
