@@ -15,7 +15,7 @@ spec:
       containers:
         - name: open-flights
           image: ajinkya0771/open-flights-web:latest
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           command: ["/bin/bash","start.sh"]
           ports:
             - containerPort: 3000
