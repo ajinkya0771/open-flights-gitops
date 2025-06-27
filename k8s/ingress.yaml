@@ -17,3 +17,4 @@ spec:
                 name: open-flights
                 port:
                   number: 3000
+
