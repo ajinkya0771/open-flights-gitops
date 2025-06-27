@@ -5,8 +5,10 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
-    - http:
+    - host: open-flights.local
+      http:
         paths:
           - path: /
             pathType: Prefix
